@@ -30,55 +30,24 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-struct WelcomeView: View {
-  @Binding var selectedTab: Int
-  @State private var showHistory = false
-    var body: some View {
-      ZStack {
-        VStack {
-          HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
-          Spacer()
-          VStack {
-            HStack(alignment: .bottom) {
-              VStack (alignment: .leading) {
-                Text("Get fit")
-                  .font(.largeTitle)
-                Text("with high intensity interval training")
-                  .font(.headline)
-              }
-              Image("step-up")
-                .resizedToFill(width: 240, height: 240)
-                .clipShape(Circle())
-            }
-            Button(action: {selectedTab = 0} ) {
-              Text("Get Started")
-              Image(systemName: "arrow.right.circle")
-            }
-            .font(.title2)
-            .padding()
-            .background(
-            RoundedRectangle(cornerRadius: 20)
-              .stroke(Color.gray, lineWidth: 2))
-          }
-          
-          
-          
-          
-          Spacer()
-          Button("History") { 
-            showHistory.toggle()
-          }
-          .sheet(isPresented: $showHistory,
-                 content: {HistoryView(showHistory: $showHistory)}
-          )
-            .padding(.bottom)
-        }
-      }
-    }
-}
-
-#Preview {
-  WelcomeView(selectedTab: .constant(9))
+extension HistoryStore {
+  mutating func createDevData() {
+    //Development data
+    
+    exerciseDays = [
+      ExerciseDay(date: Date().addingTimeInterval(-86400), exercises: [
+        Exercise.exercises[0].exerciseName,
+        Exercise.exercises[1].exerciseName,
+        Exercise.exercises[2].exerciseName
+        
+      ]),
+      ExerciseDay(date: Date().addingTimeInterval(-86400 * 2), exercises: [ 
+        Exercise.exercises[0].exerciseName,
+          Exercise.exercises[1].exerciseName
+                                                                               
+    ])
+    ]
+  }
 }

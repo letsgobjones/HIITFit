@@ -30,55 +30,24 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-struct WelcomeView: View {
-  @Binding var selectedTab: Int
-  @State private var showHistory = false
-    var body: some View {
-      ZStack {
-        VStack {
-          HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
-          Spacer()
-          VStack {
-            HStack(alignment: .bottom) {
-              VStack (alignment: .leading) {
-                Text("Get fit")
-                  .font(.largeTitle)
-                Text("with high intensity interval training")
-                  .font(.headline)
-              }
-              Image("step-up")
-                .resizedToFill(width: 240, height: 240)
-                .clipShape(Circle())
-            }
-            Button(action: {selectedTab = 0} ) {
-              Text("Get Started")
-              Image(systemName: "arrow.right.circle")
-            }
-            .font(.title2)
-            .padding()
-            .background(
-            RoundedRectangle(cornerRadius: 20)
-              .stroke(Color.gray, lineWidth: 2))
-          }
-          
-          
-          
-          
-          Spacer()
-          Button("History") { 
-            showHistory.toggle()
-          }
-          .sheet(isPresented: $showHistory,
-                 content: {HistoryView(showHistory: $showHistory)}
-          )
-            .padding(.bottom)
-        }
-      }
-    }
+struct Exercise {
+  let exerciseName: String
+  let videoName: String
+  enum ExcerciseEnum: String {
+    case squat = "Squat"
+    case stepUp = "Step Up"
+    case burpee = "Burpee"
+    case sunSalute = "Sun Salute"
+  }
 }
 
-#Preview {
-  WelcomeView(selectedTab: .constant(9))
+extension Exercise {
+  static let exercises = [
+    Exercise(exerciseName: ExcerciseEnum.squat.rawValue, videoName: "squat"),
+    Exercise(exerciseName: ExcerciseEnum.stepUp.rawValue, videoName: "step-up"),
+    Exercise(exerciseName: ExcerciseEnum.burpee.rawValue, videoName: "burpee"),
+    Exercise(exerciseName: ExcerciseEnum.sunSalute.rawValue, videoName: "sun-salute")
+  ]
 }

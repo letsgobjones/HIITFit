@@ -31,89 +31,30 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+import AVKit
 
-/*
- Here, exercise is a computed property with a type of Exercise.
- It uses a getter to return the value of Exercise.exercises[index].
- This means that whenever you access the exercise property,
- it will dynamically calculate the value based on the current value of index and the Exercise.exercises array.
- */
-
-struct ExerciseView: View {
-  @State private var rating = 0
-  @Binding var selectedTab: Int
-  @State var showHistory = false
-  @State private var showSuccess = false
+struct VideoPlayerView: View {
   let index: Int
   var exercise: Exercise {
     Exercise.exercises[index]
   }
-  let interval: TimeInterval = 30
-  var lastExercise: Bool {
-    index + 1 == Exercise.exercises.count
-  }
-  
-  var startButton: some View {
-    Button("Start Exercise") {}
-  }
-  
-  var doneButton: some View {
-    Button("Done") {
-      if lastExercise {
-        showSuccess.toggle()
-      } else {
-        selectedTab += 1
-      }
-      
-    }
-  }
   
   var body: some View {
-
       
-    GeometryReader { geometry in
-      
-      VStack {
-        
-        HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
-          .padding(.bottom)
-        
-        VideoPlayerView(index: index)
-          .frame(height: geometry.size.height * 0.45)
-
-        Text(Date().addingTimeInterval(interval), style: .timer)
-          .font(.system(size: geometry.size.height * 0.07))
-        HStack(spacing: 150) {
-          startButton
-          doneButton
-            .sheet(isPresented: $showSuccess, content: {
-              SuccessView(selectedTab: $selectedTab)
-                .presentationDetents([.medium, .large])
-            })
-        }
-        .font(.title3)
-        .padding()
-        
-        RatingView(rating: $rating)
-          .padding()
-        Spacer()
-        Button("History") {
-          showHistory.toggle()
-        }
-        .sheet(isPresented: $showHistory, content: {
-          HistoryView(showHistory: $showHistory)
-        })
-          .padding(.bottom)
+      // Check if the video file exists in the app's bundle
+      if let url = Bundle.main.url(
+        // If the video file exists, display it using AVPlayer and VideoPlayer
+        forResource: exercise.videoName, withExtension: ".mp4") {
+        VideoPlayer(player: AVPlayer(url: url))
+      } else {
+        // If the video file is not found, display an error message
+        Text("Couldn't find \(exercise.videoName).mp4")
+          .foregroundStyle(.red)
       }
     }
-    }
-  }
-
-
-
-
-
+  
+}
 
 #Preview {
-  ExerciseView(selectedTab: .constant(3), index: 3)
+  VideoPlayerView(index: 0)
 }

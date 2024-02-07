@@ -32,88 +32,29 @@
 
 import SwiftUI
 
-/*
- Here, exercise is a computed property with a type of Exercise.
- It uses a getter to return the value of Exercise.exercises[index].
- This means that whenever you access the exercise property,
- it will dynamically calculate the value based on the current value of index and the Exercise.exercises array.
- */
-
-struct ExerciseView: View {
-  @State private var rating = 0
+struct HeaderView: View {
   @Binding var selectedTab: Int
-  @State var showHistory = false
-  @State private var showSuccess = false
-  let index: Int
-  var exercise: Exercise {
-    Exercise.exercises[index]
-  }
-  let interval: TimeInterval = 30
-  var lastExercise: Bool {
-    index + 1 == Exercise.exercises.count
-  }
-  
-  var startButton: some View {
-    Button("Start Exercise") {}
-  }
-  
-  var doneButton: some View {
-    Button("Done") {
-      if lastExercise {
-        showSuccess.toggle()
-      } else {
-        selectedTab += 1
-      }
-      
-    }
-  }
+  let titleText: String
   
   var body: some View {
+    VStack {
+      Text(titleText)
+        .font(.largeTitle)
 
-      
-    GeometryReader { geometry in
-      
-      VStack {
-        
-        HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
-          .padding(.bottom)
-        
-        VideoPlayerView(index: index)
-          .frame(height: geometry.size.height * 0.45)
-
-        Text(Date().addingTimeInterval(interval), style: .timer)
-          .font(.system(size: geometry.size.height * 0.07))
-        HStack(spacing: 150) {
-          startButton
-          doneButton
-            .sheet(isPresented: $showSuccess, content: {
-              SuccessView(selectedTab: $selectedTab)
-                .presentationDetents([.medium, .large])
-            })
+      HStack {
+        ForEach(Exercise.exercises.indices, id: \.self) { index in
+          let fill = index == selectedTab ? ".fill" : ""
+          Image(systemName: "\(index + 1).circle\(fill)")
+            .onTapGesture {
+              selectedTab = index
+            }
         }
-        .font(.title3)
-        .padding()
-        
-        RatingView(rating: $rating)
-          .padding()
-        Spacer()
-        Button("History") {
-          showHistory.toggle()
-        }
-        .sheet(isPresented: $showHistory, content: {
-          HistoryView(showHistory: $showHistory)
-        })
-          .padding(.bottom)
       }
-    }
+      .font(.title2)
     }
   }
-
-
-
-
-
+}
 
 #Preview {
-  ExerciseView(selectedTab: .constant(3), index: 3)
+  HeaderView(selectedTab: .constant(0), titleText: "Squat")
 }

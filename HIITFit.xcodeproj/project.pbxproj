@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA9876782B71242E002C263F /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9876772B71242E002C263F /* RatingView.swift */; };
+		CA98767A2B71313A002C263F /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9876792B71313A002C263F /* VideoPlayerView.swift */; };
+		CA98767C2B713955002C263F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA98767B2B713955002C263F /* HistoryView.swift */; };
+		CA98767F2B713F3E002C263F /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA98767E2B713F3E002C263F /* HistoryStore.swift */; };
+		CA9876812B714147002C263F /* HistoryStoreDevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9876802B714147002C263F /* HistoryStoreDevData.swift */; };
+		CAA4D8F92B727872006EFC46 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA4D8F82B727872006EFC46 /* SuccessView.swift */; };
+		CAFE088E2B68030F00917F78 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE088D2B68030F00917F78 /* WelcomeView.swift */; };
+		CAFE08902B68031500917F78 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE088F2B68031500917F78 /* ExerciseView.swift */; };
+		CAFE08932B681C2100917F78 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE08922B681C2100917F78 /* HeaderView.swift */; };
+		CAFE08952B681D6C00917F78 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE08942B681D6C00917F78 /* Exercise.swift */; };
 		CD30C924251474DC0049DB93 /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C923251474DC0049DB93 /* HIITFitApp.swift */; };
 		CD30C926251474DC0049DB93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C925251474DC0049DB93 /* ContentView.swift */; };
 		CD30C928251474DD0049DB93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD30C927251474DD0049DB93 /* Assets.xcassets */; };
@@ -20,6 +30,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA9876772B71242E002C263F /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		CA9876792B71313A002C263F /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		CA98767B2B713955002C263F /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		CA98767E2B713F3E002C263F /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		CA9876802B714147002C263F /* HistoryStoreDevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStoreDevData.swift; sourceTree = "<group>"; };
+		CAA4D8F82B727872006EFC46 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		CAFE088D2B68030F00917F78 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		CAFE088F2B68031500917F78 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		CAFE08922B681C2100917F78 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		CAFE08942B681D6C00917F78 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		CD30C920251474DC0049DB93 /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD30C923251474DC0049DB93 /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		CD30C925251474DC0049DB93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +65,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA98767D2B713F21002C263F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA98767E2B713F3E002C263F /* HistoryStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CAFE08912B68034700917F78 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD30C925251474DC0049DB93 /* ContentView.swift */,
+				CAFE088D2B68030F00917F78 /* WelcomeView.swift */,
+				CAA4D8F82B727872006EFC46 /* SuccessView.swift */,
+				CAFE088F2B68031500917F78 /* ExerciseView.swift */,
+				CA98767B2B713955002C263F /* HistoryView.swift */,
+				CA9876792B71313A002C263F /* VideoPlayerView.swift */,
+				CA9876772B71242E002C263F /* RatingView.swift */,
+				CAFE08922B681C2100917F78 /* HeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CD30C917251474DC0049DB93 = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				CD30C923251474DC0049DB93 /* HIITFitApp.swift */,
-				CD30C925251474DC0049DB93 /* ContentView.swift */,
+				CAFE08942B681D6C00917F78 /* Exercise.swift */,
+				CAFE08912B68034700917F78 /* Views */,
+				CA98767D2B713F21002C263F /* Model */,
 				CD30C93D25147A8C0049DB93 /* DateExtension.swift */,
 				CD30C93E25147A8C0049DB93 /* ImageExtension.swift */,
 				CD30C927251474DD0049DB93 /* Assets.xcassets */,
@@ -80,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				CD30C92A251474DD0049DB93 /* Preview Assets.xcassets */,
+				CA9876802B714147002C263F /* HistoryStoreDevData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -122,8 +168,9 @@
 		CD30C918251474DC0049DB93 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = Kodeco;
 				TargetAttributes = {
 					CD30C91F251474DC0049DB93 = {
@@ -192,10 +239,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFE08902B68031500917F78 /* ExerciseView.swift in Sources */,
+				CAFE08952B681D6C00917F78 /* Exercise.swift in Sources */,
+				CAFE088E2B68030F00917F78 /* WelcomeView.swift in Sources */,
+				CA9876782B71242E002C263F /* RatingView.swift in Sources */,
+				CA98767F2B713F3E002C263F /* HistoryStore.swift in Sources */,
+				CA9876812B714147002C263F /* HistoryStoreDevData.swift in Sources */,
+				CAA4D8F92B727872006EFC46 /* SuccessView.swift in Sources */,
 				CD30C926251474DC0049DB93 /* ContentView.swift in Sources */,
+				CA98767C2B713955002C263F /* HistoryView.swift in Sources */,
 				CD30C93F25147A8C0049DB93 /* DateExtension.swift in Sources */,
 				CD30C924251474DC0049DB93 /* HIITFitApp.swift in Sources */,
 				CD30C94025147A8C0049DB93 /* ImageExtension.swift in Sources */,
+				CAFE08932B681C2100917F78 /* HeaderView.swift in Sources */,
+				CA98767A2B71313A002C263F /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +296,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -300,6 +358,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -323,9 +382,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HIITFit/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YU5RM84NC9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HIITFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -333,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kodeco.HIITFit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letsgobjones.HIITFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -346,9 +406,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HIITFit/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YU5RM84NC9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HIITFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -356,7 +417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kodeco.HIITFit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letsgobjones.HIITFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
